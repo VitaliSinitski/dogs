@@ -33,7 +33,6 @@ public class Pet {
     @ManyToOne
     private Owner owner;
 
-//    @OneToOne(mappedBy = "pet", cascade = CascadeType.ALL)
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "breed_id")
     private Breed breed;

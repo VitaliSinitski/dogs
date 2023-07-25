@@ -1,6 +1,10 @@
 package com.dogs.services;
 
+import com.dogs.dto.OwnerDto;
 import com.dogs.dto.PetDto;
+import com.dogs.entities.Owner;
+import com.dogs.entities.Pet;
+import com.dogs.mappers.OwnerMapper;
 import com.dogs.mappers.PetMapper;
 import com.dogs.repositories.PetRepository;
 import jakarta.persistence.EntityNotFoundException;
@@ -16,6 +20,7 @@ import java.util.stream.Collectors;
 @Transactional(readOnly = true)
 public class PetService {
     private final PetMapper petMapper;
+    private final OwnerMapper ownerMapper;
     private final PetRepository petRepository;
 
     public List<PetDto> findAll() {
@@ -30,4 +35,13 @@ public class PetService {
                 .map(petMapper::mapToDto)
                 .orElseThrow(() -> new EntityNotFoundException("Pet with id: " + id + " not found"));
     }
+
+    public List<PetDto> findPetsByOwner(OwnerDto ownerDto) {
+        Owner owner = ownerMapper.mapToEntity(ownerDto);
+        return petRepository.findPetsByOwner(owner)
+                .stream()
+                .map(petMapper::mapToDto)
+                .collect(Collectors.toList());
+    }
+
 }
