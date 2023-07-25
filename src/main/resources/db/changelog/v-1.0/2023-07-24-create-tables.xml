@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <!-- Create table: Breed -->
+    <changeSet id="1" author="Vitali">
+        <createTable tableName="Breed">
+            <column name="id" type="BIGINT">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="pet_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+
+    <!-- Create table: Owner -->
+    <changeSet id="2" author="Vitali">
+        <createTable tableName="Owner">
+            <column name="id" type="BIGINT">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+
+    <!-- Create table: Pet -->
+    <changeSet id="3" author="Vitali">
+        <createTable tableName="Pet">
+            <column name="id" type="BIGINT">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="owner_id" type="BIGINT"/>
+            <column name="breed_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+
+    <!-- Create table: Tag -->
+    <changeSet id="4" author="Vitali">
+        <createTable tableName="Tag">
+            <column name="id" type="BIGINT">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+
+    <!-- Add foreign keys -->
+    <changeSet id="5" author="Vitali">
+        <addForeignKeyConstraint baseTableName="Pet" baseColumnNames="owner_id"
+                                 referencedTableName="Owner" referencedColumnNames="id"
+                                 constraintName="FK_Pet_Owner"/>
+        <addForeignKeyConstraint baseTableName="Pet" baseColumnNames="breed_id"
+                                 referencedTableName="Breed" referencedColumnNames="id"
+                                 constraintName="FK_Pet_Breed"/>
+        <addForeignKeyConstraint baseTableName="Breed" baseColumnNames="pet_id"
+                                 referencedTableName="Pet" referencedColumnNames="id"
+                                 constraintName="FK_Breed_Pet"/>
+    </changeSet>
+
+    <!-- Create join table: pet_tags -->
+    <changeSet id="6" author="Vitali">
+        <createTable tableName="pet_tags">
+            <column name="pet_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="tag_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <!-- Add foreign key for the join table: pet_tags -->
+    <changeSet id="7" author="Vitali">
+        <addForeignKeyConstraint baseTableName="pet_tags" baseColumnNames="pet_id"
+                                 referencedTableName="Pet" referencedColumnNames="id"
+                                 constraintName="FK_pet_tags_pet"/>
+        <addForeignKeyConstraint baseTableName="pet_tags" baseColumnNames="tag_id"
+                                 referencedTableName="Tag" referencedColumnNames="id"
+                                 constraintName="FK_pet_tags_tag"/>
+    </changeSet>
+</databaseChangeLog>

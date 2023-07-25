@@ -1,0 +1,37 @@
+spring:
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/dogs?createDatabaseIfNotExist=true
+    username: root
+    password: root
+
+##  datasource:
+##    url: jdbc:h2:mem:dogs
+##    driver-class-name: org.h2.Driver
+##    username: sa
+##    password:
+
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+    hibernate:
+      ddl-auto: validate
+#      ddl-auto: create
+##      ddl-auto: create-drop
+##    open-in-view: false
+
+  liquibase:
+    change-log: classpath:/db/changelog/db.changelog-master.yaml
+#    change-log: classpath:src/main/resources/db/changelog/db.changelog-master.yaml
+    enabled: true
+
+#server:
+#  port: 8081
+
+##logging:
+##  level:
+##    root: info
+##    org.hibernate.SQL: debug

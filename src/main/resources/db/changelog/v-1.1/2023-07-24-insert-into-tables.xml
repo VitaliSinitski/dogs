@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <!-- Insert test data into table: owner -->
+    <changeSet id="11" author="Vitali">
+        <insert tableName="owner">
+            <column name="id" valueNumeric="1"/>
+            <column name="name" value="John Snow"/>
+        </insert>
+        <insert tableName="owner">
+            <column name="id" valueNumeric="2"/>
+            <column name="name" value="Emily Clark"/>
+        </insert>
+        <insert tableName="owner">
+            <column name="id" valueNumeric="3"/>
+            <column name="name" value="Michael Brown"/>
+        </insert>
+        <insert tableName="owner">
+            <column name="id" valueNumeric="4"/>
+            <column name="name" value="Olivia Wild"/>
+        </insert>
+        <insert tableName="owner">
+            <column name="id" valueNumeric="5"/>
+            <column name="name" value="Emma Stone"/>
+        </insert>
+    </changeSet>
+
+    <!-- Insert test data into table: tag -->
+    <changeSet id="12" author="Vitali">
+        <insert tableName="tag">
+            <column name="id" valueNumeric="1"/>
+            <column name="name" value="Friendly"/>
+        </insert>
+        <insert tableName="tag">
+            <column name="id" valueNumeric="2"/>
+            <column name="name" value="Energetic"/>
+        </insert>
+        <insert tableName="tag">
+            <column name="id" valueNumeric="3"/>
+            <column name="name" value="Playful"/>
+        </insert>
+        <insert tableName="tag">
+            <column name="id" valueNumeric="4"/>
+            <column name="name" value="Loyal"/>
+        </insert>
+        <insert tableName="tag">
+            <column name="id" valueNumeric="5"/>
+            <column name="name" value="Calm"/>
+        </insert>
+    </changeSet>
+
+    <!-- Insert test data into table: breed -->
+    <changeSet id="13" author="Vitali">
+        <insert tableName="breed">
+            <column name="id" valueNumeric="1"/>
+            <column name="name" value="Golden Retriever"/>
+            <!--            <column name="pet_id" valueNumeric="1"/>-->
+        </insert>
+        <insert tableName="breed">
+            <column name="id" valueNumeric="2"/>
+            <column name="name" value="German Shepherd"/>
+            <!--            <column name="pet_id" valueNumeric="2"/>-->
+        </insert>
+        <insert tableName="breed">
+            <column name="id" valueNumeric="3"/>
+            <column name="name" value="Labrador Retriever"/>
+            <!--            <column name="pet_id" valueNumeric="3"/>-->
+        </insert>
+        <insert tableName="breed">
+            <column name="id" valueNumeric="4"/>
+            <column name="name" value="Poodle"/>
+            <!--            <column name="pet_id" valueNumeric="4"/>-->
+        </insert>
+        <insert tableName="breed">
+            <column name="id" valueNumeric="5"/>
+            <column name="name" value="Siberian Husky"/>
+            <!--            <column name="pet_id" valueNumeric="5"/>-->
+        </insert>
+    </changeSet>
+
+
+    <!-- Insert test data into table: pet -->
+    <changeSet id="14" author="Vitali">
+        <insert tableName="pet">
+            <column name="id" valueNumeric="1"/>
+            <column name="name" value="Buddy"/>
+            <column name="owner_id" valueNumeric="1"/>
+            <column name="breed_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="pet">
+            <column name="id" valueNumeric="2"/>
+            <column name="name" value="Max"/>
+            <column name="owner_id" valueNumeric="2"/>
+            <column name="breed_id" valueNumeric="2"/>
+        </insert>
+        <insert tableName="pet">
+            <column name="id" valueNumeric="3"/>
+            <column name="name" value="Charlie"/>
+            <column name="owner_id" valueNumeric="3"/>
+            <column name="breed_id" valueNumeric="3"/>
+        </insert>
+        <insert tableName="pet">
+            <column name="id" valueNumeric="4"/>
+            <column name="name" value="Lucy"/>
+            <column name="owner_id" valueNumeric="4"/>
+            <column name="breed_id" valueNumeric="4"/>
+        </insert>
+        <insert tableName="pet">
+            <column name="id" valueNumeric="5"/>
+            <column name="name" value="Rocky"/>
+            <column name="owner_id" valueNumeric="5"/>
+            <column name="breed_id" valueNumeric="5"/>
+        </insert>
+    </changeSet>
+
+
+    <!-- Insert test data into join table: pet_tags -->
+    <changeSet id="15" author="Vitali">
+        <insert tableName="pet_tags">
+            <column name="pet_id" valueNumeric="1"/>
+            <column name="tag_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="pet_tags">
+            <column name="pet_id" valueNumeric="1"/>
+            <column name="tag_id" valueNumeric="2"/>
+        </insert>
+        <insert tableName="pet_tags">
+            <column name="pet_id" valueNumeric="2"/>
+            <column name="tag_id" valueNumeric="2"/>
+        </insert>
+        <insert tableName="pet_tags">
+            <column name="pet_id" valueNumeric="3"/>
+            <column name="tag_id" valueNumeric="3"/>
+        </insert>
+        <insert tableName="pet_tags">
+            <column name="pet_id" valueNumeric="4"/>
+            <column name="tag_id" valueNumeric="4"/>
+        </insert>
+    </changeSet>
+
+    <!-- Update values in table: breed -->
+    <changeSet id="16" author="Vitali">
+        <update tableName="breed">
+            <column name="pet_id" valueNumeric="1"/>
+            <where>id = 1</where>
+        </update>
+        <update tableName="breed">
+            <column name="pet_id" valueNumeric="2"/>
+            <where>id = 2</where>
+        </update>
+        <update tableName="breed">
+            <column name="pet_id" valueNumeric="3"/>
+            <where>id = 3</where>
+        </update>
+        <update tableName="breed">
+            <column name="pet_id" valueNumeric="4"/>
+            <where>id = 4</where>
+        </update>
+        <update tableName="breed">
+            <column name="pet_id" valueNumeric="5"/>
+            <where>id = 5</where>
+        </update>
+    </changeSet>
+
+</databaseChangeLog>

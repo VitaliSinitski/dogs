@@ -1,0 +1,129 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: Vitali
+      changes:
+        - createTable:
+            tableName: Breed
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+              - column:
+                  name: pet_id
+                  type: BIGINT
+  - changeSet:
+      id: 2
+      author: Vitali
+      changes:
+        - createTable:
+            tableName: Owner
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+  - changeSet:
+      id: 3
+      author: Vitali
+      changes:
+        - createTable:
+            tableName: Pet
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+              - column:
+                  name: owner_id
+                  type: BIGINT
+              - column:
+                  name: breed_id
+                  type: BIGINT
+  - changeSet:
+      id: 4
+      author: Vitali
+      changes:
+        - createTable:
+            tableName: Tag
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+  - changeSet:
+      id: 5
+      author: Vitali
+      changes:
+        - addForeignKeyConstraint:
+            baseTableName: Pet
+            baseColumnNames: owner_id
+            referencedTableName: Owner
+            referencedColumnNames: id
+            constraintName: FK_Pet_Owner
+        - addForeignKeyConstraint:
+            baseTableName: Pet
+            baseColumnNames: breed_id
+            referencedTableName: Breed
+            referencedColumnNames: id
+            constraintName: FK_Pet_Breed
+        - addForeignKeyConstraint:
+            baseTableName: Breed
+            baseColumnNames: pet_id
+            referencedTableName: Pet
+            referencedColumnNames: id
+            constraintName: FK_Breed_Pet
+  - changeSet:
+      id: 6
+      author: Vitali
+      changes:
+        - createTable:
+            tableName: pet_tags
+            columns:
+              - column:
+                  name: pet_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: tag_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: 7
+      author: Vitali
+      changes:
+        - addForeignKeyConstraint:
+            baseTableName: pet_tags
+            baseColumnNames: pet_id
+            referencedTableName: Pet
+            referencedColumnNames: id
+            constraintName: FK_pet_tags_pet
+        - addForeignKeyConstraint:
+            baseTableName: pet_tags
+            baseColumnNames: tag_id
+            referencedTableName: Tag
+            referencedColumnNames: id
+            constraintName: FK_pet_tags_tag

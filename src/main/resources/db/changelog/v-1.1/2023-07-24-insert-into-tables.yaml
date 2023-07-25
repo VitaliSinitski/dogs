@@ -1,0 +1,321 @@
+databaseChangeLog:
+  - changeSet:
+      id: "11"
+      author: Vitali
+      changes:
+        # Insert test data into table: owner
+        - insert:
+            tableName: owner
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 1
+              - column:
+                  name: name
+                  value: John Doe
+        - insert:
+            tableName: owner
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 2
+              - column:
+                  name: name
+                  value: Jane Smith
+        - insert:
+            tableName: owner
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 3
+              - column:
+                  name: name
+                  value: Michael Johnson
+        - insert:
+            tableName: owner
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 4
+              - column:
+                  name: name
+                  value: Emily Brown
+        - insert:
+            tableName: owner
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 5
+              - column:
+                  name: name
+                  value: William Lee
+  - changeSet:
+      id: "12"
+      author: Vitali
+      changes:
+        # Insert test data into table: tag
+        - insert:
+            tableName: tag
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 1
+              - column:
+                  name: name
+                  value: Friendly
+        - insert:
+            tableName: tag
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 2
+              - column:
+                  name: name
+                  value: Energetic
+        - insert:
+            tableName: tag
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 3
+              - column:
+                  name: name
+                  value: Playful
+        - insert:
+            tableName: tag
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 4
+              - column:
+                  name: name
+                  value: Loyal
+        - insert:
+            tableName: tag
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 5
+              - column:
+                  name: name
+                  value: Calm
+  - changeSet:
+      id: "13"
+      author: Vitali
+      changes:
+        # Insert test data into table: breed
+        - insert:
+            tableName: breed
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 1
+              - column:
+                  name: name
+                  value: Golden Retriever
+        - insert:
+            tableName: breed
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 2
+              - column:
+                  name: name
+                  value: German Shepherd
+        - insert:
+            tableName: breed
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 3
+              - column:
+                  name: name
+                  value: Labrador Retriever
+        - insert:
+            tableName: breed
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 4
+              - column:
+                  name: name
+                  value: Poodle
+        - insert:
+            tableName: breed
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 5
+              - column:
+                  name: name
+                  value: Siberian Husky
+  - changeSet:
+      id: "14"
+      author: Vitali
+      changes:
+        # Insert test data into table: pet
+        - insert:
+            tableName: pet
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 1
+              - column:
+                  name: name
+                  value: Buddy
+              - column:
+                  name: owner_id
+                  valueNumeric: 1
+              - column:
+                  name: breed_id
+                  valueNumeric: 1
+        - insert:
+            tableName: pet
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 2
+              - column:
+                  name: name
+                  value: Max
+              - column:
+                  name: owner_id
+                  valueNumeric: 2
+              - column:
+                  name: breed_id
+                  valueNumeric: 2
+        - insert:
+            tableName: pet
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 3
+              - column:
+                  name: name
+                  value: Charlie
+              - column:
+                  name: owner_id
+                  valueNumeric: 3
+              - column:
+                  name: breed_id
+                  valueNumeric: 3
+        - insert:
+            tableName: pet
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 4
+              - column:
+                  name: name
+                  value: Lucy
+              - column:
+                  name: owner_id
+                  valueNumeric: 4
+              - column:
+                  name: breed_id
+                  valueNumeric: 4
+        - insert:
+            tableName: pet
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 5
+              - column:
+                  name: name
+                  value: Rocky
+              - column:
+                  name: owner_id
+                  valueNumeric: 5
+              - column:
+                  name: breed_id
+                  valueNumeric: 5
+  - changeSet:
+      id: "15"
+      author: Vitali
+      changes:
+        # Insert test data into join table: pet_tags
+        - insert:
+            tableName: pet_tags
+            columns:
+              - column:
+                  name: pet_id
+                  valueNumeric: 1
+              - column:
+                  name: tag_id
+                  valueNumeric: 1
+        - insert:
+            tableName: pet_tags
+            columns:
+              - column:
+                  name: pet_id
+                  valueNumeric: 1
+              - column:
+                  name: tag_id
+                  valueNumeric: 2
+        - insert:
+            tableName: pet_tags
+            columns:
+              - column:
+                  name: pet_id
+                  valueNumeric: 2
+              - column:
+                  name: tag_id
+                  valueNumeric: 2
+        - insert:
+            tableName: pet_tags
+            columns:
+              - column:
+                  name: pet_id
+                  valueNumeric: 3
+              - column:
+                  name: tag_id
+                  valueNumeric: 3
+        - insert:
+            tableName: pet_tags
+            columns:
+              - column:
+                  name: pet_id
+                  valueNumeric: 4
+              - column:
+                  name: tag_id
+                  valueNumeric: 4
+  - changeSet:
+      id: "16"
+      author: Vitali
+      changes:
+        # Update values in table: breed
+        - update:
+            tableName: breed
+            columns:
+              - column:
+                  name: pet_id
+                  valueNumeric: 1
+            where: id = 1
+        - update:
+            tableName: breed
+            columns:
+              - column:
+                  name: pet_id
+                  valueNumeric: 2
+            where: id = 2
+        - update:
+            tableName: breed
+            columns:
+              - column:
+                  name: pet_id
+                  valueNumeric: 3
+            where: id = 3
+        - update:
+            tableName: breed
+            columns:
+              - column:
+                  name: pet_id
+                  valueNumeric: 4
+            where: id = 4
+        - update:
+            tableName: breed
+            columns:
+              - column:
+                  name: pet_id
+                  valueNumeric: 5
+            where: id = 5
