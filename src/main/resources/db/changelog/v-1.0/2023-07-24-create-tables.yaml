@@ -15,9 +15,9 @@ databaseChangeLog:
               - column:
                   name: name
                   type: VARCHAR(255)
-              - column:
-                  name: pet_id
-                  type: BIGINT
+#              - column:
+#                  name: pet_id
+#                  type: BIGINT
   - changeSet:
       id: 2
       author: Vitali
@@ -88,12 +88,12 @@ databaseChangeLog:
             referencedTableName: Breed
             referencedColumnNames: id
             constraintName: FK_Pet_Breed
-        - addForeignKeyConstraint:
-            baseTableName: Breed
-            baseColumnNames: pet_id
-            referencedTableName: Pet
-            referencedColumnNames: id
-            constraintName: FK_Breed_Pet
+#        - addForeignKeyConstraint:
+#            baseTableName: Breed
+#            baseColumnNames: pet_id
+#            referencedTableName: Pet
+#            referencedColumnNames: id
+#            constraintName: FK_Breed_Pet
   - changeSet:
       id: 6
       author: Vitali

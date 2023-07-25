@@ -21,10 +21,5 @@ public class Breed {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 //    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
     private String name;
-
-    @OneToOne
-    @JoinColumn(name = "pet_id")
-    private Pet pet;
 }

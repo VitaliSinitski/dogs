@@ -1,7 +1,9 @@
 package com.dogs.controllers;
 
+import com.dogs.dto.PetDto;
 import com.dogs.entities.Pet;
 import com.dogs.repositories.PetRepository;
+import com.dogs.services.PetService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,16 +16,16 @@ import java.util.List;
 @RestController
 @RequestMapping("/pets")
 public class PetController {
-    private final PetRepository petRepository;
+    private final PetService petService;
 
     @GetMapping
-    public List<Pet> getAllPets() {
-        return petRepository.findAll();
+    public List<PetDto> getAllPets() {
+        return petService.findAll();
     }
 
     @GetMapping("/{id}")
-    public Pet getPetById(@PathVariable Long id) {
-        return petRepository.findPetById(id);
+    public PetDto getPetById(@PathVariable Long id) {
+        return petService.findById(id);
     }
 }
 

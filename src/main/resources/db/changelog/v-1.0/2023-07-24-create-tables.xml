@@ -55,9 +55,9 @@
         <addForeignKeyConstraint baseTableName="Pet" baseColumnNames="breed_id"
                                  referencedTableName="Breed" referencedColumnNames="id"
                                  constraintName="FK_Pet_Breed"/>
-        <addForeignKeyConstraint baseTableName="Breed" baseColumnNames="pet_id"
-                                 referencedTableName="Pet" referencedColumnNames="id"
-                                 constraintName="FK_Breed_Pet"/>
+<!--        <addForeignKeyConstraint baseTableName="Breed" baseColumnNames="pet_id"-->
+<!--                                 referencedTableName="Pet" referencedColumnNames="id"-->
+<!--                                 constraintName="FK_Breed_Pet"/>-->
     </changeSet>
 
     <!-- Create join table: pet_tags -->

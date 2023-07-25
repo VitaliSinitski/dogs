@@ -8,5 +8,4 @@ import lombok.Value;
 public class BreedDto {
     Long id;
     String name;
-    PetDto pet;
 }

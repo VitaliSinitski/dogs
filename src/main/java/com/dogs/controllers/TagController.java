@@ -1,9 +1,7 @@
 package com.dogs.controllers;
 
-import com.dogs.dto.BreedDto;
-import com.dogs.entities.Breed;
-import com.dogs.repositories.BreedRepository;
-import com.dogs.services.BreedService;
+import com.dogs.dto.TagDto;
+import com.dogs.services.TagService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,18 +12,18 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/breeds")
-public class BreedController {
-    private final BreedService breedService;
+@RequestMapping("/tags")
+public class TagController {
+    private final TagService tagService;
 
     @GetMapping
-    public List<BreedDto> getAllBreeds() {
-        return breedService.findAll();
+    public List<TagDto> getAllTags() {
+        return tagService.findAll();
     }
 
     @GetMapping("/{id}")
-    public BreedDto getBreedById(@PathVariable Long id) {
-        return breedService.findById(id);
+    public TagDto getTagById(@PathVariable Long id) {
+        return tagService.findById(id);
     }
 }
 

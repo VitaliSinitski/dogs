@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface OwnerRepository extends JpaRepository<Owner, Long> {
     @EntityGraph("ownerWithPets")
-    Owner findById(long id);
+    Owner findOwnerById(long id);
 }
