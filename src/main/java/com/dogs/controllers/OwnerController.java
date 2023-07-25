@@ -6,6 +6,8 @@ import com.dogs.services.BreedService;
 import com.dogs.services.OwnerService;
 import com.dogs.services.PetService;
 import lombok.RequiredArgsConstructor;
+import org.hibernate.LazyInitializationException;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -34,10 +36,11 @@ public class OwnerController {
 
     @GetMapping("/lazy/{id}")
     public ResponseEntity<String> simulateLazyInitException(@PathVariable Long id) {
-        OwnerDto owner = ownerService.findById(id);
-        // will throw LazyInitException.
-        petService.findPetsByOwner(owner);
-
+            OwnerDto owner = ownerService.findById(id);
+            // will throw LazyInitException.
+//            List<PetDto> pets = petService.findPetsByOwner(owner);
+            Set<PetDto> pets = owner.getPets();
+            pets.size();
         return ResponseEntity.ok("Исключение LazyInitException было воспроизведено.");
     }
 }

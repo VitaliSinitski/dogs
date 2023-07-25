@@ -16,8 +16,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Component
-@RequiredArgsConstructor
 @Transactional(readOnly = true)
+@RequiredArgsConstructor
 public class PetService {
     private final PetMapper petMapper;
     private final OwnerMapper ownerMapper;

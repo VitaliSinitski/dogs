@@ -279,6 +279,96 @@ databaseChangeLog:
               - column:
                   name: tag_id
                   valueNumeric: 4
+        - insert:
+            tableName: pet_tags
+            columns:
+              - column:
+                  name: pet_id
+                  valueNumeric: 1
+              - column:
+                  name: tag_id
+                  valueNumeric: 5
+        - insert:
+            tableName: pet_tags
+            columns:
+              - column:
+                  name: pet_id
+                  valueNumeric: 2
+              - column:
+                  name: tag_id
+                  valueNumeric: 4
+        - insert:
+            tableName: pet_tags
+            columns:
+              - column:
+                  name: pet_id
+                  valueNumeric: 2
+              - column:
+                  name: tag_id
+                  valueNumeric: 3
+        - insert:
+            tableName: pet_tags
+            columns:
+              - column:
+                  name: pet_id
+                  valueNumeric: 3
+              - column:
+                  name: tag_id
+                  valueNumeric: 1
+        - insert:
+            tableName: pet_tags
+            columns:
+              - column:
+                  name: pet_id
+                  valueNumeric: 3
+              - column:
+                  name: tag_id
+                  valueNumeric: 2
+        - insert:
+            tableName: pet_tags
+            columns:
+              - column:
+                  name: pet_id
+                  valueNumeric: 5
+              - column:
+                  name: tag_id
+                  valueNumeric: 5
+        - insert:
+            tableName: pet_tags
+            columns:
+              - column:
+                  name: pet_id
+                  valueNumeric: 5
+              - column:
+                  name: tag_id
+                  valueNumeric: 4
+        - insert:
+            tableName: pet_tags
+            columns:
+              - column:
+                  name: pet_id
+                  valueNumeric: 5
+              - column:
+                  name: tag_id
+                  valueNumeric: 3
+        - insert:
+            tableName: pet_tags
+            columns:
+              - column:
+                  name: pet_id
+                  valueNumeric: 4
+              - column:
+                  name: tag_id
+                  valueNumeric: 1
+        - insert:
+            tableName: pet_tags
+            columns:
+              - column:
+                  name: pet_id
+                  valueNumeric: 4
+              - column:
+                  name: tag_id
+                  valueNumeric: 2
 #  - changeSet:
 #      id: "16"
 #      author: Vitali
