@@ -1,6 +1,7 @@
 package com.dogs.services;
 
 import com.dogs.dao.TagDao;
+import com.dogs.dao.TagDaoImpl;
 import com.dogs.dto.TagDto;
 import com.dogs.mappers.TagMapper;
 import jakarta.persistence.EntityNotFoundException;
@@ -9,10 +10,10 @@ import lombok.RequiredArgsConstructor;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@RequiredArgsConstructor
 public class TagServiceImpl implements TagService {
-    private final TagMapper tagMapper;
-    private final TagDao tagDao;
+    private static final TagServiceImpl INSTANCE = new TagServiceImpl();
+    private final TagMapper tagMapper = TagMapper.getInstance();
+    private final TagDao tagDao = TagDaoImpl.getInstance();
 
     @Override
     public List<TagDto> findAll() {
@@ -27,5 +28,9 @@ public class TagServiceImpl implements TagService {
         return tagDao.findById(id)
                 .map(tagMapper::mapToDto)
                 .orElseThrow(() -> new EntityNotFoundException("Pet with id: " + id + " not found"));
+    }
+
+    public static TagServiceImpl getInstance() {
+        return INSTANCE;
     }
 }
