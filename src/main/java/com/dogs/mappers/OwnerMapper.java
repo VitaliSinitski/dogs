@@ -4,7 +4,6 @@ import com.dogs.dto.OwnerDto;
 import com.dogs.entities.Owner;
 import lombok.RequiredArgsConstructor;
 
-//@Component
 @RequiredArgsConstructor
 public class OwnerMapper implements Mapper<Owner, OwnerDto> {
 //    private final PetMapper petMapper;

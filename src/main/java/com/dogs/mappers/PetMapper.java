@@ -9,7 +9,6 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-//@Component
 @RequiredArgsConstructor
 public class PetMapper implements Mapper<Pet , PetDto> {
     private final BreedMapper breedMapper;

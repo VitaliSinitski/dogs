@@ -3,7 +3,6 @@ package com.dogs.mappers;
 import com.dogs.dto.BreedDto;
 import com.dogs.entities.Breed;
 
-//@Component
 public class BreedMapper implements Mapper<Breed, BreedDto> {
     @Override
     public BreedDto mapToDto(Breed entity) {
