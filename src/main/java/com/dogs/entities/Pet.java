@@ -37,17 +37,17 @@ public class Pet {
 
     private String name;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne()
     @JoinColumn
     @ToString.Exclude
     private Owner owner;
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "breed_id")
     @ToString.Exclude
     private Breed breed;
 
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany()
     @JoinTable(name = "pet_tags",
             joinColumns = @JoinColumn(name = "pet_id"),
             inverseJoinColumns = @JoinColumn(name = "tag_id"))

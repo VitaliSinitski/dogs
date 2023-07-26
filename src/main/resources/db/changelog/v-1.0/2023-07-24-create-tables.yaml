@@ -4,7 +4,7 @@ databaseChangeLog:
       author: Vitali
       changes:
         - createTable:
-            tableName: Breed
+            tableName: breed
             columns:
               - column:
                   name: id
@@ -23,7 +23,7 @@ databaseChangeLog:
       author: Vitali
       changes:
         - createTable:
-            tableName: Owner
+            tableName: owner
             columns:
               - column:
                   name: id
@@ -39,7 +39,7 @@ databaseChangeLog:
       author: Vitali
       changes:
         - createTable:
-            tableName: Pet
+            tableName: pet
             columns:
               - column:
                   name: id
@@ -61,7 +61,7 @@ databaseChangeLog:
       author: Vitali
       changes:
         - createTable:
-            tableName: Tag
+            tableName: tag
             columns:
               - column:
                   name: id
@@ -77,17 +77,17 @@ databaseChangeLog:
       author: Vitali
       changes:
         - addForeignKeyConstraint:
-            baseTableName: Pet
+            baseTableName: pet
             baseColumnNames: owner_id
             referencedTableName: Owner
             referencedColumnNames: id
-            constraintName: FK_Pet_Owner
+            constraintName: fk_pet_owner
         - addForeignKeyConstraint:
-            baseTableName: Pet
+            baseTableName: pet
             baseColumnNames: breed_id
-            referencedTableName: Breed
+            referencedTableName: breed
             referencedColumnNames: id
-            constraintName: FK_Pet_Breed
+            constraintName: fk_pet_breed
 #        - addForeignKeyConstraint:
 #            baseTableName: Breed
 #            baseColumnNames: pet_id

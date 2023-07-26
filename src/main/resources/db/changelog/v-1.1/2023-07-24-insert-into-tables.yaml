@@ -12,7 +12,7 @@ databaseChangeLog:
                   valueNumeric: 1
               - column:
                   name: name
-                  value: John Doe
+                  value: John Snow
         - insert:
             tableName: owner
             columns:
