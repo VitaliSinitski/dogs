@@ -4,8 +4,8 @@ import com.dogs.dao.TagDao;
 import com.dogs.dao.TagDaoImpl;
 import com.dogs.dto.TagDto;
 import com.dogs.mappers.TagMapper;
-import com.dogs.repositories.TagRepository;
 import com.dogs.services.TagService;
+import com.dogs.services.TagServiceImpl;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -24,9 +24,8 @@ public class TagServlet extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
-        // Вам нужно будет инициализировать ваш сервис TagService здесь или использовать Dependency Injection.
-        // Например:
-        tagService = new TagService();
+        // инициализация TagServiceImpl, что бы использовать Dependency Injection.
+        tagService = new TagServiceImpl(tagMapper, tagDao);
     }
 
     @Override
@@ -34,6 +33,7 @@ public class TagServlet extends HttpServlet {
         List<TagDto> tags = tagService.findAll();
         // Здесь вы можете преобразовать список tags в JSON и отправить обратно клиенту.
         // Например, используя библиотеку Jackson:
+
         ObjectMapper mapper = new ObjectMapper();
         String jsonTags = mapper.writeValueAsString(tags);
 

@@ -1,11 +1,10 @@
 package com.dogs.dao;
 
 import com.dogs.util.HibernateUtil;
-import lombok.RequiredArgsConstructor;
-
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.criteria.CriteriaQuery;
-import jakarta.transaction.Transactional;
+import lombok.RequiredArgsConstructor;
+
 import java.io.Serializable;
 import java.util.List;
 import java.util.Optional;
@@ -57,7 +56,6 @@ public abstract class DaoImpl<E, ID extends Serializable> implements Dao<E, ID> 
     }
 
     @Override
-    @Transactional
     public void delete(ID id) {
         EntityManager em = HibernateUtil.getEntityManager();
         em.getTransaction().begin();

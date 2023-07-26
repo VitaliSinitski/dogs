@@ -3,14 +3,13 @@ package com.dogs.mappers;
 import com.dogs.dto.PetDto;
 import com.dogs.entities.Pet;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Component;
 
 import java.util.Collections;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-@Component
+//@Component
 @RequiredArgsConstructor
 public class PetMapper implements Mapper<Pet , PetDto> {
     private final BreedMapper breedMapper;

@@ -2,12 +2,8 @@ package com.dogs.mappers;
 
 import com.dogs.dto.BreedDto;
 import com.dogs.entities.Breed;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Component;
 
-import java.util.Optional;
-
-@Component
+//@Component
 public class BreedMapper implements Mapper<Breed, BreedDto> {
     @Override
     public BreedDto mapToDto(Breed entity) {

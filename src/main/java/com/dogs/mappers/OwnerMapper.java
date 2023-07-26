@@ -3,9 +3,8 @@ package com.dogs.mappers;
 import com.dogs.dto.OwnerDto;
 import com.dogs.entities.Owner;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 @RequiredArgsConstructor
 public class OwnerMapper implements Mapper<Owner, OwnerDto> {
 //    private final PetMapper petMapper;
