@@ -4,9 +4,8 @@ import com.dogs.dao.TagDao;
 import com.dogs.dao.TagDaoImpl;
 import com.dogs.dto.TagDto;
 import com.dogs.mappers.TagMapper;
-import jakarta.persistence.EntityNotFoundException;
-import lombok.RequiredArgsConstructor;
 
+import javax.persistence.EntityNotFoundException;
 import java.util.List;
 import java.util.stream.Collectors;
 

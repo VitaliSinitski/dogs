@@ -1,8 +1,8 @@
 package com.dogs.dao;
 
 import com.dogs.util.HibernateUtil;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.criteria.CriteriaQuery;
+import javax.persistence.EntityManager;
+import javax.persistence.criteria.CriteriaQuery;
 import lombok.RequiredArgsConstructor;
 
 import java.io.Serializable;
