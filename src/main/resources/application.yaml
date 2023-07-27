@@ -10,7 +10,7 @@ spring:
 ##    password: 4576MSQLITjd
 
     datasource:
-      url: jdbc:h2:mem:dogs
+      url: jdbc:h2:~/h2/dogs
       driver-class-name: org.h2.Driver
       username: sa
       password:
