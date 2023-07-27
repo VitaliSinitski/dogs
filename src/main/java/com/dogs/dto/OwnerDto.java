@@ -1,15 +1,20 @@
 package com.dogs.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.Value;
 
 import java.util.List;
 import java.util.Set;
 
 @Builder
-@Value
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class OwnerDto {
-    Long id;
-    String name;
-    Set<PetDto> pets;
+    private Long id;
+    private String name;
+//    Set<PetDto> pets;
 }

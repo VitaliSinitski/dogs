@@ -35,6 +35,11 @@ public class Tag {
     @ToString.Exclude
     private Set<Pet> pets = new HashSet<>();
 
+    public Tag(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

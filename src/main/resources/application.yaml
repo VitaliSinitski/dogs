@@ -3,16 +3,15 @@ spring:
     allow-circular-references: true
 
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/dogs?createDatabaseIfNotExist=true
-    username: root
-    password: 4576MSQLITjd
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/dogs?createDatabaseIfNotExist=true
+#    username: root
+#    password: 4576MSQLITjd
 
-  ##  datasource:
-  ##    url: jdbc:h2:mem:dogs
-  ##    driver-class-name: org.h2.Driver
-  ##    username: sa
-  ##    password:
+    url: jdbc:h2:~/h2/dogs
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
 
   jpa:
     properties:
